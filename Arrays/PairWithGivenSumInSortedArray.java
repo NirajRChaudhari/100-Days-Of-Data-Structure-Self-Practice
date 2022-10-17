@@ -17,7 +17,8 @@ public class PairWithGivenSumInSortedArray extends ArrayParentClass {
 
         int left = 0, right = array.length - 1;
 
-        while (left <= right) {
+        // Not left <= right
+        while (left < right) {
 
             int elementsSum = array[left] + array[right];
 

@@ -23,6 +23,7 @@ class Operations_On_Number {
         // Task 3:- Find total count of trailing zeroes in the factorial of given number
         // Important example as it avoids finding factorial of number as it can cause
         // overflow in some cases
+        // Time complexity = O( log5(n) )
         System.out.println(
                 "Total trailing zeroes in the factorial of given number are : " +
                         countTrailingZeroesInFactorial(num));

@@ -1,6 +1,6 @@
 package Recursion;
 
-public class SubsetSumProblem extends RecursionParentClass {
+public class SubsetsWithGivenSumInArray extends RecursionParentClass {
 
     public static void main(String[] args) {
 

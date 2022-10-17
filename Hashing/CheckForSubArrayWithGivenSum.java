@@ -24,21 +24,20 @@ public class CheckForSubArrayWithGivenSum extends HashingParentClass {
 
         HashSet<Integer> hashSet = new HashSet<>();
 
-        int[] prefixSum = new int[array.length];
-        prefixSum[0] = array[0];
+        int prefixSum = array[0];
 
         for (int i = 1; i < array.length; i++) {
-            prefixSum[i] = prefixSum[i - 1] + array[i];
+            prefixSum = prefixSum + array[i];
 
-            if (prefixSum[i] == sum) {
+            if (prefixSum == sum) {
                 return true;
             }
 
-            if (hashSet.contains(prefixSum[i] - sum)) {
+            if (hashSet.contains(prefixSum - sum)) {
                 return true;
             }
 
-            hashSet.add(prefixSum[i]);
+            hashSet.add(prefixSum);
         }
 
         return false;

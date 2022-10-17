@@ -6,6 +6,11 @@ public class FindIfNumberIsPowerOfTwo extends BitMagicParentClass {
 
         int number = getNumber();
 
+        if (number <= 0) {
+            System.out.println("\nGiven Number is not the power of Two\n");
+            return;
+        }
+
         // Important bitwise condition for number which is power of 2
         if ((number & (number - 1)) == 0) {
             System.out.println("\nGiven Number is power of Two\n");

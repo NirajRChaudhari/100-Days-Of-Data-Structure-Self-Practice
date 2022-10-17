@@ -24,25 +24,24 @@ public class FindLongestSubarrayWithEqualNoOfOnesAndZeroes extends HashingParent
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
 
-        int[] prefixSum = new int[array.length];
-        prefixSum[0] = array[0];
-        hashMap.put(prefixSum[0], 0);
+        int prefixSum = array[0];
+        hashMap.put(prefixSum, 0);
 
         int maxLen = 0;
 
         for (int i = 1; i < array.length; i++) {
-            prefixSum[i] = prefixSum[i - 1] + array[i];
+            prefixSum = prefixSum + array[i];
 
             int len = 0;
-            if (prefixSum[i] == 0) {
+            if (prefixSum == 0) {
                 len = i + 1;
             }
 
-            if (hashMap.containsKey(prefixSum[i])) {
-                len = i - hashMap.get(prefixSum[i]);
+            if (hashMap.containsKey(prefixSum)) {
+                len = i - hashMap.get(prefixSum);
 
             } else {
-                hashMap.put(prefixSum[i], i);
+                hashMap.put(prefixSum, i);
             }
 
             if (len > maxLen) {

@@ -27,7 +27,7 @@ public class OperationsOnCircularSinglyLinkedList {
                     break;
 
                 case 2:
-                    // linkedList.head = deletionOperation(linkedList);
+                    linkedList.head = deletionOperation(linkedList);
                     linkedList.print();
                     break;
 
@@ -145,6 +145,53 @@ public class OperationsOnCircularSinglyLinkedList {
 
                 i++;
                 tempNode = tempNode.next;
+            }
+        }
+
+        return head;
+    }
+
+    /*
+     * If the scenario is to just delete the head node
+     * 
+     * O(N) approach :
+     * Traverse to tail and removing tail.next which is head node
+     * 
+     * O(1) approach :
+     * copying head.next to head and delete head.next
+     */
+    static Node deletionOperation(CircularSinglyLinkedList linkedList) {
+
+        linkedList.print();
+
+        System.out.println("\nEnter the Element to be deleted : ");
+        int dataToDelete = sc.nextInt();
+
+        Node head = linkedList.head;
+
+        if (head == null) {
+            return null;
+
+        } else if (head.data == dataToDelete && head.next == head) {
+            return null;
+
+        } else {
+            Node tempNode = head;
+
+            while (tempNode.next != head) {
+
+                if (tempNode.next.data == dataToDelete) {
+                    tempNode.next = tempNode.next.next;
+                }
+
+                tempNode = tempNode.next;
+            }
+
+            // Control comes here when tempNode.next is head so check this position 0 for
+            // dataToDelete
+            if (tempNode.next.data == dataToDelete) {
+                tempNode.next = tempNode.next.next;
+                head = tempNode.next;
             }
         }
 

@@ -1,7 +1,7 @@
 package BitMagic;
 
 //Find one number occuring odd number of times in the array
-public class FindOnlyOddOccuringNumber extends BitMagicParentClass {
+public class FindOnlyOddOccuringNumberInAnArray extends BitMagicParentClass {
 
     public static void main(String[] args) {
 

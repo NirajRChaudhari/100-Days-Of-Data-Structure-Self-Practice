@@ -1,9 +1,8 @@
 package Arrays;
 
-import java.sql.NClob;
 import java.util.Scanner;
 
-public class Palindrome_Number {
+public class PalindromeNumber {
 
     static Scanner sc = new Scanner(System.in);
 

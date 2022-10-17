@@ -6,7 +6,11 @@ public class MaximumLengthOfEvenOddSubarray extends ArrayParentClass {
         int[] array = getArray();
         int size = array.length;
 
-        System.out.println("Maximum Length of Even Odd SubArray is : " + approachOne(array, size));
+        System.out.println("Maximum Length of Even Odd SubArray is : " +
+                approachOne(array, size));
+
+        System.out.println("Maximum Length of Even Odd SubArray is : " + approachTwo(array, size));
+
     }
 
     static int approachOne(int[] array, int size) {
@@ -29,6 +33,29 @@ public class MaximumLengthOfEvenOddSubarray extends ArrayParentClass {
                 maxCnt = cnt;
             }
         }
+
+        if (maxCnt < cnt) {
+            maxCnt = cnt;
+        }
+
+        return maxCnt;
+    }
+
+    static int approachTwo(int[] array, int size) {
+
+        int cnt = 1, maxCnt = 1;
+
+        for (int i = 1; i < size; i++) {
+
+            if ((array[i - 1] + array[i]) % 2 == 0) {
+                if (maxCnt < cnt) {
+                    maxCnt = cnt;
+                }
+                cnt = 0;
+            }
+
+            cnt++;
+        } // for
 
         if (maxCnt < cnt) {
             maxCnt = cnt;

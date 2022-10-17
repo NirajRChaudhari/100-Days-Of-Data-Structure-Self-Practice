@@ -35,7 +35,7 @@ public class CountSetBitsInANumber extends BitMagicParentClass {
         do {
             count++;
             tempNum = tempNum & (tempNum - 1);
-        } while (tempNum > 0);
+        } while (tempNum > 0); // tempNum!=0
 
         System.out.println("\nTotal number of set bits in the number " + num + " are : " + count + "\n");
     }

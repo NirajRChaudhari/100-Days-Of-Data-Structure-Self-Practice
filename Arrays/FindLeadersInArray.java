@@ -1,6 +1,6 @@
 package Arrays;
 
-// Leader is an element to whose right all elements are smaller than it
+// Leader is an element to whose all right elements are smaller than it
 public class FindLeadersInArray extends ArrayParentClass {
     public static void main(String[] args) {
 
